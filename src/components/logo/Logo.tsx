@@ -1,0 +1,10 @@
+import { Icon } from "../icon/Icon"
+import { animateScroll as scroll } from "react-scroll"
+
+export const Logo: React.FC = () => {
+    return(
+        <a onClick={() => {scroll.scrollToTop()}}>
+            <Icon path={"/iconst-sprite.svg"} iconId={'logo'}/>
+        </a>
+    )
+}
