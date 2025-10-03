@@ -19,7 +19,7 @@ export const Contacts: React.FC = () => {
         emailjs
         .sendForm('service_vbie8bd', 'template_uzk7km3', form.current, {publicKey: 't4Sp9M5v_T6QlZ8m5',})
         .then(() => {console.log('SUCCESS!');},(error) => {console.log('FAILED...', error.text);},);
-    e.target.reset()
+        e.target.reset()
     };
 
     return(

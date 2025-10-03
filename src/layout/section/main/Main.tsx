@@ -15,7 +15,6 @@ export const Main: React.FC = () => {
                         <S.Name><span></span>Yuliia Stadnyk</S.Name>
                         <S.MainTitle>Creative thinker Minimalism lover</S.MainTitle>
                         <S.MainTitle>
-                            <p>Creative thinker Minimalism lover</p>
                             {/* <Typewriter
                                 options={{
                                     strings: ['Creative thinker Minimalism lover'],
