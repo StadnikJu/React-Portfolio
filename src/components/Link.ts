@@ -21,12 +21,14 @@ export const Link = styled.a<{active?: boolean}>`
     &::before {
         content: "";
         display: inline-block;
-        background-color: ${theme.colors.Fontfirst};
+        background-color: ${theme.colors.accent};
         position: absolute;
         bottom: 5px;
         left: 0;
         right: 0;
         z-index: 1;
+        height: 0;
+        transition: ${theme.animations.transition};
 
         ${props => props.active && css<{active?: boolean}> `
             height: 10px;

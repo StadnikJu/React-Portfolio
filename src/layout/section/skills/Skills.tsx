@@ -4,6 +4,7 @@ import { Skill } from "./skill/Skill"
 import picture from '../../../assets/Imges/image.png'
 import { Container } from "../../../components/Container"
 import { S } from "../../section/skills/skill/Skills_Styles"
+import { Fade } from "react-awesome-reveal";
 
 
 const skillData = [
@@ -41,9 +42,11 @@ export const Skills: React.FC = () => {
                 <S.FlexWrapperSkills>
                 <S.Picture src={picture}></S.Picture>
                     <FlexWrapper direction={"row"} wrap={"wrap"} justify={"center"} gap={"40px"}>
+                    <Fade cascade={true} damping={0.3}>
                         {skillData.map((skill, index) => {
                             return <Skill iconId={"left-arrow"} title={skill.title} text={skill.text} key={index}/>
                         })}
+                    </Fade>
                     </FlexWrapper>
                 </S.FlexWrapperSkills>
             </Container>

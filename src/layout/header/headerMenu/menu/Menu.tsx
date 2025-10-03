@@ -15,14 +15,18 @@ const menuItems = [
     }
 ];
 
+type MenuPropsType = {
+    onClick: () => void;
+}
 
-export const Menu: React.FC = () => {
+
+export const Menu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
     return(
         <ul>
             {menuItems.map((item,index) => {
                 return(
                     <S.MenuItem key={index}>
-                        <S.NavLink to={item.href} smooth={true} activeClass="active" spy={true}>{item.title}</S.NavLink>
+                        <S.NavLink to={item.href} smooth={true} activeClass="active" spy={true} onClick={props.onClick}>{item.title}</S.NavLink>
                     </S.MenuItem>
                 )
             })}  

@@ -20,19 +20,21 @@ const Text = styled.p`
 const SocialList = styled.ul`
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
     margin-top: 100px;
-    flex-wrap: wrap;
-
+    
     @media ${theme.media.mobile} {
-        justify-content: center;
         margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 `
 
 const SocialItem = styled.li`
     &:hover {
         transform: translateY(-4px);
+        transition: ${theme.animations.transition};
     }
 `
 

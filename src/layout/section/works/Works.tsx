@@ -7,6 +7,7 @@ import timerImg from '../../../assets/Imges/image14.png'
 import { Container } from "../../../components/Container"
 import { S } from "./Works_Styles"
 import { useState } from "react"
+import { AnimatePresence, motion } from "motion/react"
 
 const tabItems: Array<{title: string, status: TabStatusType}> = [
     {
@@ -32,13 +33,43 @@ const worksData = [
         title: "Social Network",
         src: socialImg,
         text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
-        type: "spa"
+        type: "spa",
+        id: 1
     },
     {
         title: "Timer",
         src: timerImg,
         text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
-        type: "react"
+        type: "react",
+        id: 2
+    },
+    {
+        title: "Social Network",
+        src: socialImg,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
+        type: "spa",
+        id: 3
+    },
+    {
+        title: "Timer",
+        src: timerImg,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
+        type: "react",
+        id: 4
+    },
+    {
+        title: "Social Network",
+        src: socialImg,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
+        type: "spa",
+        id: 5
+    },
+     {
+        title: "Timer",
+        src: timerImg,
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in! Lorem consectetur adipisicing elit. Magni officiis ducimus laboriosam fugiat alias corrupti? Harum neque at exercitationem in!",
+        type: "react",
+        id: 6
     },
 ]
 
@@ -68,13 +99,26 @@ export const Works: React.FC = () => {
                 <SectionTitle fontWeight={600}>My works</SectionTitle>
                 <TabMenu tabItems={tabItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}/>
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={"wrap"}>
-                    {filteredWorks.map((work, index) => {
-                        return <Work title={work.title} 
-                            key={index}
-                            src={work.src}
-                            text={work.text}>
-                        </Work>
+                <AnimatePresence>
+
+                    {filteredWorks.map((work) => {
+                        return(
+                            <motion.div style={{width: "330px", flexGrow: 1, maxWidth: "400px"}}
+                               layout
+                               initial={{ x: 300, opacity: 0 }}
+                               animate={{ x: 0, opacity: 1 }}
+                               exit={{ x: -300, opacity: 0 }}
+                               key={work.id}
+                            >
+                                <Work title={work.title} 
+                                    key={work.id}
+                                    src={work.src}
+                                    text={work.text}>
+                                </Work>
+                            </motion.div>
+                        )
                     })}
+                </AnimatePresence>
                 </FlexWrapper>
             </Container>
         </S.Works>

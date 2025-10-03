@@ -6,6 +6,6 @@ import { GlobalStyled } from './styles/Global.styled.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <GlobalStyled/>
-    <App />
+    <App/>
   </StrictMode>,
 )

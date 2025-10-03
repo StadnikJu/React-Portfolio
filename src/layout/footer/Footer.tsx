@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
         <S.Footer>
             <Container>
                 <FlexWrapper direction={"column"} align={"center"}>
-                    <S.Contact>Contact with me</S.Contact>
+                    <S.Contact>Contact</S.Contact>
                     <S.Text>I’m not currently taking on new client work but feel free to contact me for any other inquiries.</S.Text>
                     <S.SocialList>
 

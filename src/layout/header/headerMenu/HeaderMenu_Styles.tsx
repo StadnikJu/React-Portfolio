@@ -17,6 +17,7 @@ const NavLink = styled(Link)`
         color: ${theme.colors.Fontfirst};
         font-size: 22px;
         transition: 0.4s;
+        transition: ${theme.animations.transition};
     }
 `
 
@@ -36,13 +37,11 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     z-index: 99999;
     background-color: #fef2f2f6;
     display: none;
-
-    ${props => props.isOpen && css<{isOpen: boolean}>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
 
     ul {
         display: flex;
@@ -51,6 +50,14 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
         align-items: center;
         flex-direction: column;
     }
+
+    ${props => props.isOpen && css<{isOpen: boolean}>`
+        transform: translateY(0);
+
+        & ul {
+            gap: 80px;
+        }
+    `}
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`

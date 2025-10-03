@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { theme } from "../../../../styles/Theme"
 
 const TabMenu = styled.nav`
     display: flex;
@@ -13,7 +14,7 @@ const TabMenu = styled.nav`
     }
 
     button {
-        border: 1px solid #3730a3;
+        border: 1px solid ${theme.colors.accent};
         border-radius: 6px;
         width: 131px;
         height: 52px;
@@ -22,7 +23,7 @@ const TabMenu = styled.nav`
         font-weight: 500;
         font-size: 18px;
         line-height: 156%;
-        color: #3730a3;
+        color: ${theme.colors.accent};
     }
 
 `
